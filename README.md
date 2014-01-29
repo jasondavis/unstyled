@@ -77,7 +77,7 @@ Example:
 ```
 
 ##### Preventing FOUC (flash of unstyled content) with .fullscreen
-1. Load jQuery in the head tag instead of before the __</body>__ tag;
+1. Load jQuery in the head tag instead of before the ```</body>``` tag;
 2. Put this snippet before the body tag:
 ```html
 <script>
