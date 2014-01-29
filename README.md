@@ -1,4 +1,4 @@
-# [Buggy Boilerplate](https://github.com/VPenkov/buggy-boilerplate)Buggy Boilerplate
+# [Buggy Boilerplate](https://github.com/VPenkov/buggy-boilerplate)
 =================
 
 Buggy Boilerplate (BBP) is a HTML/CSS framework which is based on the infamous [HTML5 Boilerplate](http://html5boilerplate.com) by Paul Irish. Most credits go to his team. Please refer to their fine [documentation](https://github.com/h5bp/html5-boilerplate/blob/master/doc/TOC.md).
