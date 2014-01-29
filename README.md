@@ -1,5 +1,4 @@
 # [Buggy Boilerplate](https://github.com/VPenkov/buggy-boilerplate)
-=================
 
 Buggy Boilerplate (BBP) is a HTML/CSS framework which is based on the infamous [HTML5 Boilerplate](http://html5boilerplate.com) by Paul Irish. Most credits go to his team. Please refer to their fine [documentation](https://github.com/h5bp/html5-boilerplate/blob/master/doc/TOC.md).
 We have added a 960px grid system that scales down to smaller displays to provide a responsive layout.
