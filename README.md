@@ -43,9 +43,9 @@ The grid system features a few classes and is meant to be responsive. It will pr
 </div>
 ```
 
-### Eigth
+### Eighth
 ```html
-<div class="eight">
+<div class="eighth">
 	This is 120px wide by default which is 1/8 of the layout
 </div>
 ```
