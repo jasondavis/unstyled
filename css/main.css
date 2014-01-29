@@ -1,0 +1,251 @@
+html,button,input,select,textarea{color:#222}*{box-sizing:border-box;-moz-box-sizing:border-box;outline:0}img{vertical-align:middle}fieldset{border:0;margin:0;padding:0}textarea{resize:vertical}textarea,input{font-family:inherit}.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}.cufon-loading{visibility:hidden}ol{list-style-position:inside}audio,canvas,img,svg,video {vertical-align: middle;}fieldset {border:0;margin:0;padding:0;}textarea {resize: vertical;}.browsehappy {margin:0.2em 0;background:#ccc;color:#000;padding:0.2em 0;}
+body {
+    line-height: 1.4;
+    margin: 0 auto;
+    color: #000;
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+    color: #424242;
+}
+
+a:hover,a.active {
+    color: #97b043;
+}
+
+::-moz-selection {
+    background: #97b143;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #97b143;
+    color: #fff;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+a,input,textarea,fieldset {
+    -moz-transition:    all .1s linear;
+    -webkit-transition: all .1s linear;
+    -o-transition:      all .1s linear;
+    transition:         all .1s linear;
+}
+
+/* ==========================================================================
+   Custom styles
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Firefox-only styles
+   ========================================================================== */
+@-moz-document url-prefix() {
+    
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.table {
+    display: table;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tCenter {
+    text-align: center;
+}
+
+.tLeft {
+    text-align: left;
+}
+
+.tRight {
+    text-align: right;
+}
+
+.tJustify {
+    text-align: justify;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.bold,.strong,b,strong {
+    font-weight: 700;
+}
+
+.shadow {
+    text-shadow: 0 1px 0 rgba(0,0,0,.7);
+}
+
+.white,.white {
+    color: #fff;
+}
+
+.black,.black {
+    color: #000;
+}
+
+/* ==========================================================================
+   Grid System
+   ========================================================================== */
+
+/* Normal 960 Desktop version */
+.full   {width:960px;margin:auto;}
+.most   {width:640px;}
+.half   {width:480px;}
+.third  {width:320px;}
+.fourth {width:240px;}
+.eighth  {width:120px;}
+
+/* Tablet Screen Sizes */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .full   {width:768px;}
+    .most   {width:492px;}
+    .half   {width:364px;}
+    .third  {width:236px;}
+    .fourth {width:172px;}
+    .eighth  {width:76px;}
+}
+
+/* Mobile Landscape Screen Sizes */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .full   {width:460px;}
+    .most   {width:225px;}
+    .half   {width:225px;}
+    .third  {width:225px;}
+    .fourth {width:225px;}
+    .eighth  {width:225px;}
+}
+
+/* Mobile Portrate Screen Sizes */
+@media only screen and (max-width: 479px) {
+    .full   {width:300px;}
+    .most   {width:300px;}
+    .half   {width:300px;}
+    .third  {width:300px;}
+    .fourth {width:300px;}
+    .eighth {width:300px;}
+    img     {max-width:90%}
+}
+
+/* Kinda ugly, but fixes positioning in various resolutions */
+@media only screen and (min-width: 768px) {
+    .most,.half,.third,.fourth,.eighth {float: left;}
+}
+
+@media only screen and (max-width: 767px) {
+    .most,.half,.third,.fourth,.eighth {margin:auto;}
+}
+
+img {max-width: 100%;}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
