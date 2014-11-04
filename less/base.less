@@ -1,0 +1,93 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Body reset
+// You can use .reset(); if you don't like Normalize.css.
+// It's better for test project because it removes _all_ the styling
+// instead of giving common defaults
+.normalize();
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-family: @font-family-base;
+}
+
+body {
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @text-color;
+  background-color: @body-bg;
+  -webkit-transform-style: preserve-3d;
+}
+
+// Enable placeholder colors
+input,
+textarea {
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &:-ms-input-placeholder {
+    color: @placeholder-color;
+  }
+}
+
+// Images
+img {
+  vertical-align: middle;
+  .img-responsive(inline);
+}
+
+// Horizontal rules
+
+hr {
+  margin-top:    @line-height-computed;
+  margin-bottom: @line-height-computed;
+  border: 0;
+  border-top: 1px solid @hr-border;
+}
+
+::selection {
+  background: @selection-text;
+  color: @selection-background;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: @selection-text;
+  color: @selection-background;
+  text-shadow: none;
+}
+
+mark {
+  background: @selection-text;
+  color: @selection-background;
+}
+
+a,input,textarea,fieldset {
+  .animate();
+}
+
+a {
+  text-decoration: none;
+}
+
+// Simple usability hack
+// Disable if you use borders as text decoration
+article a,
+.content a {
+  position: relative;
+  padding: .5em;
+  margin: -.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  .content &, article & {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+    list-style-type: disc;
+  }
+}

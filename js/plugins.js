@@ -1,5 +1,100 @@
-// Enable the placeholder="" attribute in older browsers
-!function(a){a.extend(a,{placeholder:{browser_supported:function(){return void 0!==this._supported?this._supported:this._supported=!!("placeholder"in a('<input type="text">')[0])},shim:function(b){var c={color:"#888",cls:"placeholder",selector:"input[placeholder], textarea[placeholder]"};return a.extend(c,b),!this.browser_supported()&&a(c.selector)._placeholder_shim(c)}}}),a.extend(a.fn,{_placeholder_shim:function(b){function c(b){var c=a(b).offsetParent().offset(),d=a(b).offset();return{top:d.top-c.top,left:d.left-c.left,width:a(b).width()}}function d(b){var e=b.data("target");"undefined"!=typeof e&&(b.css(c(e)),a(window).one("resize",function(){d(b)}))}return this.each(function(){var e=a(this);if(e.is(":visible")){if(e.data("placeholder")){var f=e.data("placeholder");return f.css(c(e)),!0}var g={};e.is("textarea")||"auto"==e.css("height")||(g={lineHeight:e.css("height"),whiteSpace:"nowrap"});var h=a("<label />").text(e.attr("placeholder")).addClass(b.cls).css(a.extend({position:"absolute",display:"inline","float":"none",overflow:"hidden",textAlign:"left",color:b.color,cursor:"text",paddingTop:e.css("padding-top"),paddingRight:e.css("padding-right"),paddingBottom:e.css("padding-bottom"),paddingLeft:e.css("padding-left"),fontSize:e.css("font-size"),fontFamily:e.css("font-family"),fontStyle:e.css("font-style"),fontWeight:e.css("font-weight"),textTransform:e.css("text-transform"),backgroundColor:"transparent",zIndex:99},g)).css(c(this)).attr("for",this.id).data("target",e).click(function(){a(this).data("target").focus()}).insertBefore(this);e.data("placeholder",h).keydown(function(){h.hide()}).blur(function(){h[e.val().length?"hide":"show"]()}).triggerHandler("blur"),a(window).one("resize",function(){d(h)})}})}})}(jQuery);
+/* =====================
+ * Unstyled Functions
+ * ================== */
+(function($){ 
 
-// The Full-screen function, feel free to remove it if you don't use it.
-function browserResize(){var b=$(window).height();$(window).width(),$(".fullscreen").height(),$(".fullscreen").css({height:b})}
+  /* ===========================================
+   * Responsive navs
+   * See the markup for exmple structure
+   * Then you can call the responsiveNav plugin
+   * $('.nav').responsiveNav();
+   */
+  $.fn.responsiveNav = function() {
+    // Toggle the menu on mobile devices
+    var $this = $(this);
+    $this.children('.menu-toggle').click(function(event) {
+      event.preventDefault();
+      $(this).next('ul').toggleClass('opened');
+      $(this).toggleClass('active');
+      $('header').toggleClass('opened');
+      $('.nav ul ul').slideUp();
+    });
+
+    var navLinks = $this.children('ul').find('a');
+
+    // Insert arrows for submenus
+    navLinks.each(function() {
+      var submenu = $(this).next('ul');
+      if (submenu.length) {
+        $(this).append('<span class="arrow"><div>&#9662;</div></span>')
+      }
+    });
+
+    // Toggle the submenus on desktop versions
+    $this.find('.arrow').click(function(e) {
+      e.preventDefault();
+      $(this).parent().next('ul').stop().slideToggle(150);
+      $(this).toggleClass('active');
+    });
+    return this;
+  }
+
+  /* ===========================================
+   * Handle hashtag URLs
+   * If you have a <section id="section1"> and
+   * an <a href="#section1">
+   * $('.nav').sectionLinks();
+   */
+  $.fn.sectionLinks = function() {
+    var $this = $(this);
+    $this.find('a').click(function(e){
+      if (this.hash) {
+        e.preventDefault();
+        scrollTo(this.hash, 1000,0);
+      }
+    });
+    return this;
+  }
+
+  /* ===========================================
+   * Equal heights
+   * If you want to make a set of elements 
+   * to have equal heights, call the equalHeights
+   * plugin for their parents
+   * $('.parent').equalHeights();
+   */
+  $.fn.equalHeights = function(px) {
+    $(this).each(function(){
+      var currentTallest = 0;
+      $(this).children().each(function(i){
+        if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+      });
+      if (!px && Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
+      $(this).children().css({'min-height': currentTallest}); 
+    });
+    return this;
+  };
+
+  /* ===========================================
+   * Custom scrollTo implementation
+   * Most of the time all you want to do
+   * is scroll just up and down so no need
+   * to load scrollTo.js
+   * Remove if you decide to go with scrollTo.js
+   * Usage: scrollTo('#element', 1000); 
+   */
+  function scrollTo(selector, time, verticalOffset) {
+      time = typeof(time) != 'undefined' ? time : 1000;
+      verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+      element = $(selector);
+      offset = element.offset();
+      offsetTop = offset.top + verticalOffset;
+      $('html, body').animate({
+          scrollTop: offsetTop
+      }, time);
+  }
+})(jQuery);
+
+/* ==================
+ * End of Unstyled
+ * =============== */
