@@ -172,7 +172,12 @@
 	// JavaScript styles
 	.js & {
 		ul {
-			display: none;
+			@media @max-md {
+				display: none;
+			}
+			ul {
+				display: none;
+			}
 			ul ul { // Lower-level submenus
 				position: relative;
 			}
