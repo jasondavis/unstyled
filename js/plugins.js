@@ -10,9 +10,18 @@
    * $('.nav').responsiveNav();
    */
   $.fn.responsiveNav = function() {
+    // Toggle the menu on mobile devices
     var $this = $(this);
+    $this.children('.menu-toggle').click(function(event) {
+      event.preventDefault();
+      $(this).next('ul').toggleClass('opened');
+      $(this).toggleClass('active');
+      $('header').toggleClass('opened');
+      $('.nav ul ul').slideUp();
+    });
+
     var navLinks = $this.children('ul').find('a');
-    
+
     // Insert arrows for submenus
     navLinks.each(function() {
       var submenu = $(this).next('ul');
@@ -21,32 +30,12 @@
       }
     });
 
-    // Toggle the menu on mobile devices
-    $this.children('.menu-toggle').click(function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      $(this).next('ul').toggle(0, function(){$(this).toggleClass('opened')});
-      $(this).toggleClass('active');
-      $('header').toggleClass('opened');
-    });
-
     // Toggle the submenus on desktop versions
     $this.find('.arrow').click(function(e) {
       e.preventDefault();
-      e.stopPropagation();
       $(this).parent().next('ul').stop().slideToggle(150);
       $(this).toggleClass('active');
     });
-
-    $('body').click(function(){
-      closeChildren();
-    });
-
-    function closeChildren() {
-      $this.find('.opened').removeClass('.opened');
-      $this.find('.arrow').removeClass('active');
-      $this.find('ul ul').slideUp();
-    }
     return this;
   }
 
@@ -106,3 +95,6 @@
   }
 })(jQuery);
 
+/* ==================
+ * End of Unstyled
+ * =============== */

@@ -26,8 +26,8 @@ With Bootstrap you can do:
 
 This is sometimes sub-optimal and slow to type. Therefore, we introduced a few common short-hand classes
 
-| Class name | What it's short for             | Size on a Desktop | Size on a Tablet | Size on a small screen |
-|------------|---------------------------------|-------------------|------------------|------------------------|
+| Class name     | What it's short for                 | Size on a Desktop | Size on a Tablet | Size on a small screen |
+|----------------|-------------------------------------|-------------------|------------------|------------------------|
 | ``.full``      | ``.container``                      | 1170px            | 750px            | 320+px                 |
 | ``.most``      | ``.col-md-8 .col-sm-12 .col-xs-12`` | 75%               | 100%             | 100%                   |
 | ``.half``      | ``.col-md-6 .col-sm-12 .col-xs-12`` | 50%               | 100%             | 100%                   |
@@ -92,19 +92,19 @@ Navigations should follow this structure:
 This is going to automatically generate a responsive navigation with a neatly animated side menu. It functions on all devices, with or without JavaScript enabled, and allows you to have unlimited levels of submenus.
 
 ### Helper Classes
-| Class Name    | Short Alias | Description                                                         |
-|---------------|-------------|---------------------------------------------------------------------|
-| ``.hidden``       | ``.hide``       | ``display: none !important``                                           |
-| ``.invisible``    | ``.invis``      | ``visibility: hidden``                                                 |
-| ``.clearfix``     | ``.clear``      | A standard clearfix class                                           |
-| ``.left``         | ``.l``          | ``float: left !important``                                             |
-| ``.right``        | ``.r``          | ``float: right !important``                                            |
-| ``.tLeft``        | ``.tl``         | ``text-align: left``                                                   |
-| ``.tRight``       | ``.tr``         | ``text-align: right``                                                  |
-| ``.tCenter``      | ``.tc``         | ``text-align: center``                                                 |
+| Class Name        | Short Alias     | Description                                                             |
+|-------------------|-----------------|-------------------------------------------------------------------------|
+| ``.hidden``       | ``.hide``       | ``display: none !important``                                            |
+| ``.invisible``    | ``.invis``      | ``visibility: hidden``                                                  |
+| ``.clearfix``     | ``.clear``      | A standard clearfix class                                               |
+| ``.left``         | ``.l``          | ``float: left !important``                                              |
+| ``.right``        | ``.r``          | ``float: right !important``                                             |
+| ``.tLeft``        | ``.tl``         | ``text-align: left``                                                    |
+| ``.tRight``       | ``.tr``         | ``text-align: right``                                                   |
+| ``.tCenter``      | ``.tc``         | ``text-align: center``                                                  |
 | ``.center-block`` | ``.cb``         | Center an element using ``margin: 0 auto; float: none; display: block`` |
-| ``.relative``     | ``.rel``        | ``position: relative``                                                 |
-| ``.absolute``     | ``.abs``        | ``position: absolute``                                                 |
+| ``.relative``     | ``.rel``        | ``position: relative``                                                  |
+| ``.absolute``     | ``.abs``        | ``position: absolute``                                                  |
 
 ### Elements
 ``.mask`` - An overlay for elements with position: relative intended to provide a description.
@@ -116,18 +116,6 @@ This is going to automatically generate a responsive navigation with a neatly an
 ``.browsehappy`` - A notification for people with old browsers (IE<9).
 
 ``#logo`` - A default logo element which will float on the left side on desktops, and become centered in lower resolutions.
-
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
-
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable 
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.  
 
 ## JavaScripts
 ### Responsive Navigations
