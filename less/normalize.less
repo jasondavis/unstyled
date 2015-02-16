@@ -22,6 +22,7 @@
    */
 
   html {
+    font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
@@ -109,10 +110,7 @@
    */
 
   a:active,
-  a:hover,
-  input,
-  button,
-  textarea {
+  a:hover {
     outline: 0;
   }
 
@@ -274,7 +272,6 @@
     color: inherit; /* 1 */
     font: inherit; /* 2 */
     margin: 0; /* 3 */
-    line-height: inherit;
   }
 
   /**
@@ -351,6 +348,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
+    box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
   }
 
@@ -441,39 +439,6 @@
   td,
   th {
     padding: 0;
-  }
-
-  /*
-   * Remove the gap between audio, canvas, iframes,
-   * images, videos and the bottom of their containers:
-   * https://github.com/h5bp/html5-boilerplate/issues/440
-   */
-
-  audio,
-  canvas,
-  iframe,
-  img,
-  svg,
-  video {
-      vertical-align: middle;
-  }
-
-  /*
-   * Remove default fieldset styles.
-   */
-
-  fieldset {
-      border: 0;
-      margin: 0;
-      padding: 0;
-  }
-
-  /*
-   * Allow only vertical resizing of textareas.
-   */
-
-  textarea {
-      resize: vertical;
   }
 }
 
