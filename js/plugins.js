@@ -1,3 +1,8 @@
+Modernizr.load([{
+  test: Modernizr.placeholder,
+  nope: ['js/vendor/placeholder.js', 'js/vendor/selectivizr.js']
+}]);
+
 /* =====================
  * Unstyled Functions
  * ================== */
@@ -105,4 +110,3 @@
       }, time);
   }
 })(jQuery);
-
