@@ -1,6 +1,6 @@
 Modernizr.load([{
   test: Modernizr.placeholder,
-  nope: ['js/vendor/placeholder.js', 'js/vendor/selectivizr.js']
+  nope: [ themePath + 'js/vendor/placeholder.js', themePath + 'js/vendor/selectivizr.js']
 }]);
 
 /* =====================
@@ -89,24 +89,24 @@ Modernizr.load([{
       $(this).children().css({'min-height': currentTallest}); 
     });
     return this;
-  };
-
-  /* ===========================================
-   * Custom scrollTo implementation
-   * Most of the time all you want to do
-   * is scroll just up and down so no need
-   * to load scrollTo.js
-   * Remove if you decide to go with scrollTo.js
-   * Usage: scrollTo('#element', 1000); 
-   */
-  function scrollTo(selector, time, verticalOffset) {
-      time = typeof(time) != 'undefined' ? time : 1000;
-      verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-      element = $(selector);
-      offset = element.offset();
-      offsetTop = offset.top + verticalOffset;
-      $('html, body').animate({
-          scrollTop: offsetTop
-      }, time);
-  }
+  };  
 })(jQuery);
+
+/* ===========================================
+ * Custom scrollTo implementation
+ * Most of the time all you want to do
+ * is scroll just up and down so no need
+ * to load scrollTo.js
+ * Remove if you decide to go with scrollTo.js
+ * Usage: scrollTo('#element', 1000); 
+ */
+function scrollTo(selector, time, verticalOffset) {
+    time = typeof(time) != 'undefined' ? time : 1000;
+    verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+    element = $(selector);
+    offset = element.offset();
+    offsetTop = offset.top + verticalOffset;
+    $('html, body').animate({
+        scrollTop: offsetTop
+    }, time);
+}
