@@ -76,17 +76,17 @@ Modernizr.load([{
    * Equal heights
    * If you want to make a set of elements 
    * to have equal heights, call the equalHeights
-   * plugin for their parents
-   * $('.parent').equalHeights();
+   * plugin for them
+   * $('.elements').equalHeights();
    */
   $.fn.equalHeights = function(px) {
-    $(this).each(function(){
-      var currentTallest = 0;
-      $(this).children().each(function(i){
-        if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
-      });
-      if (!px && Number.prototype.pxToEm) currentTallest = currentTallest.pxToEm(); //use ems unless px is specified
-      $(this).children().css({'min-height': currentTallest}); 
+    var currentTallest = 0;
+    $(this).each(function(i){
+      $(this).removeAttr('style');
+      if ($(this).height() > currentTallest) { currentTallest = $(this).height(); }
+    });
+    $(this).each(function() {
+      $(this).animate({height: currentTallest}); 
     });
     return this;
   };  

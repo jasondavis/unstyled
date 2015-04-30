@@ -143,8 +143,8 @@ If you have a ``<section id="section1">`` and an ``<a href="#section1">`` inside
 This is going to translate all the links inside the navigation into smooth-scrolling animations while preserving normal links.
 
 ### Equal Heights
-If you want to make a set of elements inside a ``<div class="parent">`` to have equal heights, call the equalHeights plugin for their parent:
-``$('.parent').equalHeights();``
+If you want to make a set of elements inside a ``<div class="parent">`` to have equal heights, call the equalHeights plugin for them. The following call will equalize all elements with the class .elements:
+``$('.elements').equalHeights();``
 
 ### scrollTo Lite
 Most of the time all you want to do is scroll just up and down so no need to load scrollTo.js.
@@ -154,8 +154,10 @@ Usage: ``scrollTo('#element', 1000);``
 ## Third-Party JavaScripts
 We use these third-party scripts for legacy support (Internet Explorer versions 8 and lower). They won't load in newer or non-Internet Explorer browsers.
 ### [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
-This script is the de facto standard to enable use of HTML5 sectioning elements in legacy Internet Explorer.
+This script is the de facto standard to enable use of HTML5 sectioning elements in legacy Internet Explorer. Loaded via Modernizr only if IE <9 is present.
 ### [Respond.js](https://github.com/scottjehl/Respond)
 A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8)
 ### [Placeholders.js](http://jamesallardice.github.io/Placeholders.js/)
 Placeholders.js is a JavaScript polyfill for the HTML5 placeholder attribute. It's lightweight, has zero dependencies and works in pretty much any browser you can imagine.
+### [Selectivizr.js](http://selectivizr.com/)
+Enables you to use funky CSS selectors otherwise unsupported by older browsers.
