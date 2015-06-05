@@ -63,21 +63,12 @@ mark {
   color: @selection-background;
 }
 
-a,input,textarea,fieldset {
-  .animate();
-}
-
 a {
   text-decoration: none;
-}
-
-// Simple usability hack
-// Disable if you use borders as text decoration
-article a,
-.content a {
-  position: relative;
-  padding: .5em;
-  margin: -.5em;
+  color: @links;
+  &:hover {
+    color: @links-hover;
+  }
 }
 
 ul {
