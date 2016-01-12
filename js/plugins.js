@@ -1,3 +1,6 @@
+// Replace class="no-js" with class="js" in <html>
+document.documentElement.className = document.documentElement.className.replace("no-js","js");
+
 /* =====================
  * Unstyled Functions
  * ================== */
