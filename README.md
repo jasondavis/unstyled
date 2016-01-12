@@ -8,15 +8,13 @@ The special thing about Unstyled is that it's extremely lightweight and almost c
   - Simplified classes for columns
   - Automatic responsive menu, with a non-JavaScript fallback
   - Lightweight scrollTo plugin
-  - Lightweight Equal Heights plugin
-  - A choice between CSS Reset and Normalize.css
+  - A choice between CSS Reset, Sanitize.css, and Normalize.css
   - Print-friendly styles
   - Fixed minor annoyances (unnecessary outlines, removed background from a:active under IE10+)
-  - Intelligent fallbacks for IE8 and 9 (placeholder.js, html5shiv, respond.js)
-  - IE10 hack for Windows 8 & Windows Phone 8 fixing its not recognizing media queries
+  - IE10 hack for Windows Phone 8 fixing its not recognizing media queries
 
 ##Version
-Version 1.1
+Version 2.0
 
 
 ## Grid System and short-hand classes
@@ -37,20 +35,29 @@ This is sometimes sub-optimal and slow to type. Therefore, we introduced a few c
 
 ### The ``.row`` class
 The ``.row`` class does a ``margin: 0 -15px;`` on an element, effectively removing its default paddings.
-A common use would be ``<div class="full row"></div>`` which is going to extend the viewport to align inner elements more easily.
+A common use would be 
+```html
+	<div class="full row">
+    	<div class="row">
+        	<div class="col-md-6">Content goes here</div>
+            <div class="col-md-6">More content goes here</div>
+        </div>
+    </div>
+```
+which is going to extend the viewport to align inner elements more easily.
 
 ### Column Offsets
 Colum offsetting means to leave X columns between the current element and the next one like so:
 ``<div class="col-md-6 col-md-offset-1"></div>``. This is going to take up 7 columns, with one of the columns being empty.
 
-We believe consistency is important and it is quite rare to actually use column offsets so they are disabled.
+We believe it is quite rare to actually use column offsets so they are disabled.
 Still, they are available, so if you want to use them, you should open up ``less/mixins/grid-framework.less``, then scroll to the bottom and remove the last 3 comments.
 Refer to [Bootstrap's Offsetting documentation](http://getbootstrap.com/css/#grid-offsetting) if that is what you are looking for.
 
 ## Animations
 Some elements are animated by default to provide a smooth effects to links, inputs, and textareas. They do not use a linear transition but instead they use the timing curve you can see on Google's Material Design.
 
-If you want to utilize the same bezier-curve on other elements, use the ``.animate();`` mixin
+If you want to utilize the same bezier-curve on other elements, use the ``.animate(@obj, @duration, @animation);`` mixin
 
 ## Elements
 ### Links
@@ -142,22 +149,8 @@ If you have a ``<section id="section1">`` and an ``<a href="#section1">`` inside
 
 This is going to translate all the links inside the navigation into smooth-scrolling animations while preserving normal links.
 
-### Equal Heights
-If you want to make a set of elements inside a ``<div class="parent">`` to have equal heights, call the equalHeights plugin for them. The following call will equalize all elements with the class .elements:
-``$('.elements').equalHeights();``
 
 ### scrollTo Lite
 Most of the time all you want to do is scroll just up and down so no need to load scrollTo.js.
 Remove if you decide to go with scrollTo.js
-Usage: ``scrollTo('#element', 1000);``
-
-## Third-Party JavaScripts
-We use these third-party scripts for legacy support (Internet Explorer versions 8 and lower). They won't load in newer or non-Internet Explorer browsers.
-### [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
-This script is the de facto standard to enable use of HTML5 sectioning elements in legacy Internet Explorer. Loaded via Modernizr only if IE <9 is present.
-### [Respond.js](https://github.com/scottjehl/Respond)
-A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8)
-### [Placeholders.js](http://jamesallardice.github.io/Placeholders.js/)
-Placeholders.js is a JavaScript polyfill for the HTML5 placeholder attribute. It's lightweight, has zero dependencies and works in pretty much any browser you can imagine.
-### [Selectivizr.js](http://selectivizr.com/)
-Enables you to use funky CSS selectors otherwise unsupported by older browsers.
+$('body').scrollTo(urlHash, {offsetTop: -20});

@@ -5,30 +5,11 @@
     padding: .2em 0;
 }
 
-.mask {
-	.abs;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	opacity: 0;
-	transform: scale(0);
-}
-
 #logo {
 	float: left;
 	@media @max-md {
 		float: none;
-		.cb;
-		.tc;
-	}
-}
-
-input, textarea {
-	.animate();
-	&:focus {
-		border: 1px solid @input-glow-color;
-		box-shadow: 0 0 5px @input-glow-color;
-		outline: none;
+		.cb; // center block
+		.tc; // center text
 	}
 }

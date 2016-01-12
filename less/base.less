@@ -1,12 +1,7 @@
-//
-// Scaffolding
-// --------------------------------------------------
-
 // Body reset
-// You can use .reset(); if you don't like Normalize.css.
-// It's better for test project because it removes _all_ the styling
-// instead of giving common defaults
-.normalize();
+// You can use .reset(); if you don't like sanitize.css.
+// You can also use .normalize(); if you prefer normalize.css.
+.sanitize();
 
 html {
   font-size: 62.5%;
@@ -22,19 +17,14 @@ body {
 }
 
 // Enable placeholder colors
-input,
-textarea {
-  &::-webkit-input-placeholder,
-  &:-moz-placeholder,
-  &:-ms-input-placeholder {
-    color: @placeholder-color;
-  }
-}
+::-webkit-input-placeholder {color: @placeholder-color}
+:-moz-placeholder {color: @placeholder-color}
+:-ms-input-placeholder {color: @placeholder-color}
 
 // Images
 img {
-  vertical-align: middle;
   .img-responsive(inline);
+  vertical-align: middle;
 }
 
 // Horizontal rules
