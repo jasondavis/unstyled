@@ -1,19 +1,16 @@
-// Body reset
-// You can use .reset(); if you don't like sanitize.css.
-// You can also use .normalize(); if you prefer normalize.css.
-.sanitize();
-
 html {
-  font-size: 62.5%;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  font-family: @font-family-base;
+	cursor: default;
+	text-rendering: optimizeLegibility;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: @font-family-base;
 }
 
 body {
-  font-size: @font-size-base;
-  line-height: @line-height-base;
-  color: @text-color;
-  background-color: @body-bg;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    color: @text-color;
+    background-color: @body-bg;
 }
 
 // Enable placeholder colors
@@ -21,53 +18,31 @@ body {
 :-moz-placeholder {color: @placeholder-color}
 :-ms-input-placeholder {color: @placeholder-color}
 
-// Images
-img {
-  .img-responsive(inline);
-  vertical-align: middle;
-}
-
 // Horizontal rules
 
 hr {
-  margin-top:    @line-height-computed;
-  margin-bottom: @line-height-computed;
-  border: 0;
-  border-top: 1px solid @hr-border;
-}
-
-::selection {
-  background: @selection-text;
-  color: @selection-background;
-  text-shadow: none;
-}
-
-::-moz-selection {
-  background: @selection-text;
-  color: @selection-background;
-  text-shadow: none;
-}
-
-mark {
-  background: @selection-text;
-  color: @selection-background;
+    margin-top:    @line-height-computed;
+    margin-bottom: @line-height-computed;
+    border: 0;
+    border-top: 1px solid @hr-border;
 }
 
 a {
-  text-decoration: none;
-  color: @links;
-  &:hover {
-    color: @links-hover;
-  }
+    background-color: transparent;
+    text-decoration: none;
+    color: @links;
+    &:hover {
+        color: @links-hover;
+    }
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  .content &, article & {
-    margin: 1em 0;
-    padding: 0 0 0 40px;
-    list-style-type: disc;
-  }
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    .content &, article & {
+        margin: 1em 0;
+        padding: 0 0 0 40px;
+        list-style-type: disc;
+    }
 }
