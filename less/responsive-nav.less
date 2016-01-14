@@ -1,8 +1,8 @@
 .menu-toggle {
-  position: relative;
-  padding: 15px;
+    position: relative;
+    padding: 15px;
 	&:before {
-	  content: "";
+	    content: "";
 		position: absolute;
 		right: 5px;
 		top: 6px;
@@ -46,7 +46,7 @@
 			right: 0;
 			overflow: hidden;
 			.menu-toggle {
-				&+ul {
+				& + ul {
 					transform: translateX(100%) scale(0);
 				}
 			}
@@ -156,7 +156,7 @@
 		li:hover {
 			& > ul {
 				max-height: 1000px;
-		
+
 			}
 		}
 		@media @min-md {
